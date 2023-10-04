@@ -1,0 +1,40 @@
+footer {
+  height: 10vh;
+  text-align: center;
+  position: relative;
+  span {
+  }
+  .mention {
+    z-index: 99;
+    color: $black;
+    font-weight: bold;
+    text-decoration: underline;
+    transform: scale(1);
+    &:hover {
+      z-index: 2;
+      cursor: pointer;
+      color: $color-GOLD;
+      transform: scale(1.5);
+    }
+  }
+
+  .poweredLegalis {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    text-transform: capitalize;
+    font-family: $font-1;
+    z-index: 2;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 80px;
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,301 @@
+.home {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    animation: background 2s forwards;
+    z-index: 11;
+  }
+  @keyframes background {
+    0% {
+      opacity: 1;
+      z-index: 11;
+    }
+    80% {
+      opacity: 1;
+      z-index: 2;
+    }
+    100% {
+      opacity: 0;
+      z-index: 0;
+    }
+  }
+
+  .logoBadge {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    animation: logoAnim 2s ease-in forwards;
+    z-index: 99;
+    @media (max-width: 1000px) {
+      top: 40%;
+      left: 65%;
+      // width: 100px;
+      // height: 100px;
+      animation: logoAnim2 2s ease-in forwards;
+    }
+    @media (max-width: 600px) {
+      top: 20%;
+      left: 50%;
+      width: 100%;
+      height: auto;
+      animation: logoAnim3 2s ease-in forwards;
+    }
+    // ***********************************
+    @keyframes logoAnim {
+      0% {
+        transform: translate(-50%, -50%) rotate(0);
+        top: 50%;
+        left: 50%;
+      }
+      30% {
+        transform: translate(-50%, -50%) rotate(0);
+        top: 50%;
+        left: 50%;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) rotate(5415deg) scale(0.3);
+        top: 30%;
+        left: 70%;
+      }
+    }
+
+    @keyframes logoAnim2 {
+      0% {
+        transform: translate(-50%, -50%) rotate(0);
+        top: 50%;
+        left: 50%;
+      }
+      30% {
+        transform: translate(-50%, -50%) rotate(0);
+        top: 50%;
+        left: 50%;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) rotate(5415deg) scale(0.3);
+        top: 30%;
+        left: 60%;
+      }
+    }
+    @keyframes logoAnim3 {
+      0% {
+        transform: translate(-50%, -50%) rotate(0);
+        top: 50%;
+        left: 50%;
+      }
+      30% {
+        transform: translate(-50%, -50%) rotate(0);
+        top: 50%;
+        left: 50%;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) rotate(5415deg) scale(0.3);
+        top: 30%;
+        left: 60%;
+      }
+    }
+  }
+  &:after {
+    content: "";
+    height: 800px;
+    width: 800px;
+    background: $color-3;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -480px;
+    right: 0px;
+    z-index: -2;
+    animation: homeAnim 15s infinite alternate;
+
+    @media screen and (max-width: 650px) {
+      height: 400px;
+      width: 400px;
+      bottom: -270px;
+    }
+
+    @keyframes homeAnim {
+      50% {
+        transform: scale(0.8);
+      }
+      100% {
+        transform: scale(1.4);
+      }
+    }
+    @media screen and (max-width: 430px) {
+      display: none;
+    }
+  }
+
+  .home-main {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 90vh;
+    position: relative;
+
+    // &:after {
+    //   content: "";
+    //   position: absolute;
+    //   background: $bg-logo;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   background-repeat: no-repeat;
+    //   background-size: cover;
+    //   background-position: center;
+    //   top: 0;
+    //   left: 0;
+    //   transform: scale(0.5);
+    //   height: 100%;
+    //   width: 100%;
+    //   animation: logoAnim 10s ease-in-out forwards;
+    //   z-index: 99;
+    // }
+
+    .logo {
+      animation: logoAnim 5s ease-in-out;
+    }
+
+    .main-content {
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
+      @media (max-width: 600px) {
+        padding-left: 10%;
+      }
+
+      h1 {
+        position: relative;
+        position: relative;
+        font-family: $font-2;
+
+        @media screen and (max-width: 1000px) {
+          font-size: 1.5rem;
+        }
+        @media screen and (max-width: 600px) {
+          font-size: 1rem;
+        }
+        @media screen and (min-width: 1200px) {
+          font-size: 3rem;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          height: 225px;
+          width: 225px;
+          border-radius: 50%;
+          border: 1px $color-2 solid;
+          top: -40px;
+          left: -180px;
+          z-index: -1;
+          animation: h1Anim 1.5s infinite alternate;
+          transform: scale(0);
+          @media screen and (max-width: 850px) {
+            height: 110px;
+            width: 110px;
+            left: -40px;
+            top: -15px;
+          }
+
+          @keyframes h1Anim {
+            0% {
+              transform: scale(1);
+            }
+            100% {
+              transform: scale(1.2);
+            }
+          }
+        }
+        img {
+          position: absolute;
+          width: 30%;
+          left: 50%;
+          top: -100%;
+          transform: translate(-50%, 0%);
+          z-index: 6;
+          // animation: topToBack 6s ease-in;
+        }
+        // @keyframes topToBack {
+        //   0% {
+        //     left: 50%;
+        //     top: -800%;
+        //   }
+        //   80% {
+        //     left: 50%;
+        //     top: -100%;
+        //   }
+        //   84% {
+        //     left: 50%;
+        //     top: -120%;
+        //   }
+        //   88% {
+        //     left: 50%;
+        //     top: -100%;
+        //   }
+        //   92% {
+        //     left: 50%;
+        //     top: -110%;
+        //   }
+        //   96% {
+        //     left: 50%;
+        //     top: -100%;
+        //   }
+        //   98% {
+        //     left: 50%;
+        //     top: -105%;
+        //   }
+        //   100% {
+        //     left: 50%;
+        //     top: -100%;
+        //   }
+        // }
+
+        strong {
+          color: $color-GOLD;
+          font-family: $font-3;
+        }
+      }
+      h2 {
+        font-size: 3rem;
+        font-weight: 100;
+        @media (max-width: 1000px) {
+          font-size: 2rem;
+        }
+
+        @media screen and (max-width: 650px) {
+          font-size: 1.5rem;
+        }
+
+        @media screen and (max-width: 400px) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  @keyframes h1Anim {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+}
